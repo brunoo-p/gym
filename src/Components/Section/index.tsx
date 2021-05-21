@@ -2,15 +2,15 @@ import React from 'react';
 import { Container, Content } from './styles';
 
 interface SectionContent  {
-    background: string;
     height: string;
-    title: string;
-    text: string;
+    background?: string;
+    title?: string;
+    text?: string;
+    children?: any;
 }
 
-const Section: React.FC<SectionContent> = (props) => {
+const Section = ( { background = '#262626', height, title, text, children } : SectionContent) => {
 
-    const { background, height, title, text, children } = props;
     return (
         <Container background={background} height={height}>
             <Content>
