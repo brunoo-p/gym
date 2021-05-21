@@ -20,7 +20,7 @@ export const Container = styled.aside`
             position: absolute;
             width: 80%;
             justify-content: center;
-            top: 24%;
+            top: 28%;
             word-spacing: 5px;
             text-align: center;
             
@@ -58,7 +58,7 @@ export const Container = styled.aside`
         }
         @media(min-width: 720px){
             label{
-                top: 26%;
+                top: 29.4%;
                 word-spacing: 5px;
                 font-size: 42px;
             }
@@ -109,6 +109,18 @@ export const Container = styled.aside`
 
                 transition: 0.3s ease-in;
 
+                ::-webkit-scrollbar {
+                    width: 4px;
+                }
+                ::-webkit-scrollbar-track{
+                    background: #333;
+                }
+                ::-webkit-scrollbar-thumb {
+                    background-color:  rgba(136,136,136, .5);
+                    border-radius: 20px;
+                    border: 1px solid #1aaa;
+                }
+
                 :focus{
                     transform: scale(1);
                 }
@@ -136,7 +148,7 @@ export const Container = styled.aside`
                     transition: 0.5s ease-in;
 
                     @keyframes move {
-                        0%, 100% {transform: translateY(-45%); opacity: 1;}
+                        0%, 100% {transform: translateY(-52%); opacity: 1;}
                         50% {transform: translateY(0%);
                             opacity: 9;
                             transform: scale(.95);
@@ -161,6 +173,7 @@ export const Container = styled.aside`
                     background:rgba(36,36,36);
                     margin-top: 0;
                     padding: 0 20px;
+                    justify-content: space-around;
                     
                 }
                 .card--right{
@@ -169,6 +182,7 @@ export const Container = styled.aside`
                     overflow: hidden;
                     margin: -5px 0 5px 0;
                     padding: 0 0 10px 0;
+                    justify-content: space-around;
                     
                     .moveCards{
                         display: flex;
@@ -192,6 +206,7 @@ export const Container = styled.aside`
         label{
             display: flex;
             position: absolute;
+            z-index: 1;
             width: 100%;
             justify-content: center;
 
@@ -251,6 +266,44 @@ export const Container = styled.aside`
             }
         }
             
+    }
+
+    :nth-child(4){
+        clip-path: polygon(0% 0%, 0% 100%, 18% 99%, 19% 16%, 83% 16%, 83% 80%, 17% 80%, 17% 100%, 100% 100%, 100% 0%);
+        background: linear-gradient(46deg, rgba(2,2,2) 70%, #CCC);
+        opacity: 0.6;
+        border-radius: 20px;
+
+        @media (min-width: 720px){
+            display: flex;
+            background: transparent;
+            width: 50%;
+            margin-left: 25%;
+        }
+    }
+
+    :nth-child(5){
+        display: flex;
+        width: 110%;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+        border-radius: 0;
+        margin: 0 0px -10px -10px;
+        box-shadow: 1px 0px 0px 3px rgba(192,192,192, .6);
+        h1{
+            font-size: 26px; 
+        }
+
+        label{
+            font-size: 16px;
+        }
+
+        @media (min-width: 720px){
+            margin: 0 0 -10px 
+            -20px;
+        }
     }
 
     background-color: ${(props) => props.background};

@@ -6,15 +6,17 @@ interface CardContent{
     description: string;
     width?: string;
     height?: string;
+    color?: string;
 }
 
-const Card: React.FC<CardContent> = (props) => {
+const Card = ({ srcImage, description, width ="150px", height="120px", color }: CardContent) => {
     
-    const { srcImage, description, width, height } = props;
     return (
-        <Container width={width} height={height}>
-            <CardImage src={srcImage}/>
-            <CardDescription>{description}</CardDescription>
+        <Container width={width} height={height} >
+
+            <CardImage src={srcImage} />
+            <CardDescription color={color}> {description} </CardDescription>
+        
         </Container>
     )
 }

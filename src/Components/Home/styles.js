@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import tape from '../../Assets/tape.jpg';
 
 export const Container = styled.div`
     z-index: -2;
@@ -23,25 +24,41 @@ export const Container = styled.div`
     }
     ::-webkit-scrollbar-thumb {
         background-color: rgba(136,136,136, .6);
-        border-radius: 0px;       
-        border: 2px solid #33aaaa;
+        border-radius: 5px;       
+        border: 2px solid #1aaa;
     }
 `;
 
 export const Wrapper = styled.div`
-    background:linear-gradient(60deg, rgba(255, 0, 0, .4) 10%, orange);
+    //background-color:linear-gradient(60deg, rgba(255, 0, 0, .4) 10%, orange);
+    background-color: #1aaa;
+    background-image: url(${tape});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: darken;
+    
     padding: 5px;
     z-index:-1;
     
     position: relative;
-    background-attachment: fixed;
+
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
+
+    
     
 `;
 export const Content = styled.div`
     margin: 10px 5px;
+
+    .whatsapp{
+        position: absolute;
+        z-index: 3;
+        display: block;
+    }
     
     @media(min-width: 1024px){
 
