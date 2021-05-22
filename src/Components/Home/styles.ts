@@ -25,7 +25,7 @@ export const Container = styled.div`
     ::-webkit-scrollbar-thumb {
         background-color: rgba(136,136,136, .6);
         border-radius: 5px;       
-        border: 2px solid #1aaa;
+        border: 1px solid #1aaa;
     }
 `;
 
@@ -49,16 +49,9 @@ export const Wrapper = styled.div`
     scroll-behavior: smooth;
 
     
-    
 `;
 export const Content = styled.div`
-    margin: 10px 5px;
-
-    .whatsapp{
-        position: absolute;
-        z-index: 3;
-        display: block;
-    }
+    margin: 10px 0px;
     
     @media(min-width: 1024px){
 

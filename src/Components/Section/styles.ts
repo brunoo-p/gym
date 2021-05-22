@@ -1,13 +1,20 @@
 import styled from 'styled-components';
+import danca from '../../Assets/danca.jpg';
 
-export const Container = styled.aside`
+
+export const Container = styled.aside<{height: string, background: string}>`
     width: 100%;
-    height: ${({height}) => height};
+    
+    height: ${({height}) : string => height};
     margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
 
     :first-child{
+        background: linear-gradient(46deg, rgba(2,2,2, .8) 37.65%, rgba(103,230,220, .8) 27.03%, rgba(125,95,255, .8));
+        -webkit-box-shadow: 2px 6px 37px 40px rgba(125,95,255, .8);
+        -moz-box-shadow: 2px 6px 37px 40px rgba(103,230,220, .8);
+        box-shadow: 2px 6px 37px 40px rgba(230,230, 239, .3);
         
         h1{
             display: none;
@@ -26,8 +33,15 @@ export const Container = styled.aside`
             
             font-size: 28px;
             font-family: 'Monoton';
-            font-weight: italic;
-            color: rgba(45,222,133, .6);
+            color: rgba(45,222,133, .8);
+
+            animation-fill-mode: forwards;
+            animation: fade 1s ease-in;
+            
+            @keyframes fade {
+                from { top: 26%; opacity: 0.1;}
+                to { top: 285; opacity: 1}
+            }
         }
 
         .childrenContent{
@@ -35,7 +49,8 @@ export const Container = styled.aside`
             height: 100%;
             align-items: center;
             justify-content: center;
-            background: #222;
+            border-radius: 5px;
+            background: rgba(26,26,26,.8);
             
             iframe{
                 width: 100%;
@@ -57,6 +72,10 @@ export const Container = styled.aside`
             }
         }
         @media(min-width: 720px){
+
+            background: linear-gradient(6deg, rgba(125,95,255, .8) 37.13%, rgba(103,230,220, .8));
+            box-shadow: 2px 6px 37px 22px rgba(124,126,126, .4);
+
             label{
                 top: 29.4%;
                 word-spacing: 5px;
@@ -124,6 +143,9 @@ export const Container = styled.aside`
                 :focus{
                     transform: scale(1);
                 }
+
+                animation-fill-mode: forwards;
+                animation: showCards .36s ease-in;
             }
             
             .card--right{
@@ -140,8 +162,9 @@ export const Container = styled.aside`
                 margin-top: 15px;
     
                 overflow: hidden;
+                animation-fill-mode: forwards;
+                animation: showCards .36s ease-in;
 
-    
                 .moveCards{
                     animation: move 7s infinite alternate;
                     animation-fill-mode: forwards;
@@ -155,6 +178,11 @@ export const Container = styled.aside`
                         }
                     }
                 }
+            }
+
+            @keyframes showCards {
+                from { transform: scale(.9); opacity: 0.1;}
+                to { transform: scale(1); opacity: 1}
             }
         }
 
@@ -173,6 +201,7 @@ export const Container = styled.aside`
                     background:rgba(36,36,36);
                     margin-top: 0;
                     padding: 0 20px;
+                    transform: scale(1);
                     justify-content: space-around;
                     
                 }
@@ -196,9 +225,9 @@ export const Container = styled.aside`
     
     :nth-child(3){
         overflow: hidden;
-
         margin-left: -15px;
         flex-wrap: wrap;
+        filter: drop-shadow(0 0 0.25rem white);
 
         h1{
             display: none;
@@ -269,14 +298,18 @@ export const Container = styled.aside`
     }
 
     :nth-child(4){
-        clip-path: polygon(0% 0%, 0% 100%, 18% 99%, 19% 16%, 83% 16%, 83% 80%, 17% 80%, 17% 100%, 100% 100%, 100% 0%);
-        background: linear-gradient(46deg, rgba(2,2,2) 70%, #CCC);
         opacity: 0.6;
         border-radius: 20px;
+        //background-color: rgba(225, 95, 65, .8);
+        background-color: linear-gradient(46deg, rgba(2,2,2, .4) 37.65%, rgba(103,230,220, .8) 27.03%, rgba(125,95,255, .8));
+        background-blend-mode: darken;
+        background: url(${danca});
+        background-size: cover;
+        background-position: center;
 
         @media (min-width: 720px){
             display: flex;
-            background: transparent;
+            //background: transparent;
             width: 50%;
             margin-left: 25%;
         }
@@ -293,20 +326,75 @@ export const Container = styled.aside`
         margin: 0 0px -10px -10px;
         box-shadow: 1px 0px 0px 3px rgba(192,192,192, .6);
         h1{
-            font-size: 26px; 
+            font-size: 24px;
+            display: flex;
+            height: 15%;
+            align-items: center;
+            justify-content: center;
         }
 
         label{
-            font-size: 16px;
+            font-size: 20px;
+            display: flex;
+            height: 20%;
+            align-items: center;
+            justify-content: center;
+            color: #1aaa;
+            
+            
+            margin-bottom: 4%;
+        }
+
+        ul{
+            width: 100%;
+            height: 100%;
+        
+            li{
+                width: 100%;
+                font-size: 16px;
+                padding: 5px;
+                cursor: pointer;
+                background: transparent;
+                transition: all 0.5s ease-in;
+
+                :hover{
+                    background: -webkit-linear-gradient(#7d5fff, #67e6dc);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;   
+                }
+            }
+        }
+        span{
+            display: flex;
+            height: 100%;
+            align-items: flex-end;
+            justify-content: center;
+            margin-bottom: -10px;
+
+            font-size: 16px; 
+            background: -webkit-linear-gradient(#7d5fff, #67e6dc);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
         }
 
         @media (min-width: 720px){
-            margin: 0 0 -10px 
-            -20px;
+            margin: 0 0 -10px -20px;
+
+            label{
+                margin-bottom: 1%;
+
+            }
+            ul{
+                width: 50%;
+                transform: translateX(25%);
+            }
+            span{
+                margin-bottom: -20px;
+            }
         }
     }
 
-    background-color: ${(props) => props.background};
+    background-color: ${({ background }) : string => background };
     
 `;
 
