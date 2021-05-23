@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, CardImage, CardDescription } from './styles';
 
 interface CardContent{
-    srcImage: any;
+    srcImage: {};
     description: string;
     width?: string;
     height?: string;
@@ -21,4 +21,4 @@ const Card = ({ srcImage, description, width ="150px", height="120px", color }: 
     )
 }
 
-export default Card
+export default Card;
