@@ -1,5 +1,4 @@
 import React from 'react';
-import { HtmlHTMLAttributes } from 'react';
 import { Container, Content } from './styles';
 
 interface SectionContent  {
@@ -19,9 +18,7 @@ const Section = ( { background = '#262626', height, title, text, children } : Se
                 <h1 style={{color: 'white'}}>{title}</h1>
                 <label htmlFor="text">{text}</label>
                 
-                <div className= "childrenContent">
-                    {children}
-                </div>
+                <div className= "childrenContent"> {children} </div>
             
             </Content>
         </Container>

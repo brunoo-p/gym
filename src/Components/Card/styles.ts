@@ -20,13 +20,13 @@ export const Container = styled.div<{width: string, height: string}>`
 `;
 
 
-export const CardImage = styled.div<{ src: any}>`
+export const CardImage = styled.div<{ src: {}}>`
     width: 100%;
     height: 100%;
     border-radius: 10px 10px 0px 0px;
     border-bottom: 1px solid black;
 
-    background-image: url(${({src}): any => src});
+    background-image: url(${({src}): {} => src});
     background-position: center;
     background-size: cover;
     background-reapeat: no-repeat;
@@ -39,6 +39,7 @@ export const CardDescription = styled.span<{color: string | undefined}>`
     height: 60%;
     align-items: center;
     justify-content: center;
+    
     --color: ${({color})  => color || 'rgba(89, 98, 217, .67)'};
     background: linear-gradient(45deg, var(--color) 60%, rgba(225, 95, 65, .8));
 
