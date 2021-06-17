@@ -9,7 +9,6 @@ export const Container = styled.div`
     position: absolute;
     font-family: 'Roboto', sans serif;
     transition: 0.5s ease-in;
-
     
     width: 100%;
     height: 100vh;
@@ -48,10 +47,22 @@ export const Wrapper = styled.div`
     overflow-y: auto;
     scroll-behavior: smooth;
 
+    animation: slide .5s ease-out forwards;
+
+    @keyframes slide {
+        from {transform: translateX(100%); opacity: 0;}
+        to   {transform: translateX(0%);}
+    }
     
 `;
 export const Content = styled.div`
     margin: 10px 0px;
+    animation: slide .9s ease-out forwards;
+
+    @keyframes slide {
+        from {transform: translateX(100%);}
+        to   {transform: translateX(0%);}
+    }
     
     @media(min-width: 1024px){
 
