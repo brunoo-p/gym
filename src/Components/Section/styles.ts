@@ -395,6 +395,20 @@ export const Container = styled.aside<{height: string, background: string}>`
     }
 
     background-color: ${({ background }) : string => background };
+    opacity: 0;
+    animation: slideSections 1s ease-out forwards;
+    animation-play-state: paused;
+
+    @keyframes slideSections {
+        0% {
+            opacity: 0;
+            transform: translateY(-30%); 
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0%); 
+        }
+    }
     
 `;
 
